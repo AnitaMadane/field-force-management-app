@@ -1,8 +1,8 @@
 # Field Force Management App
 
-A Flutter-based Field Force Management application developed as an internship assignment project.
+A Flutter-based **Field Force Management System** developed as an internship assignment project.
 
-The application helps manage:
+This application helps organizations manage:
 - Leads
 - Tasks
 - Visits
@@ -10,7 +10,20 @@ The application helps manage:
 - Escalations
 - AI-based Suggestions
 
-The app supports multiple user roles with permission-based workflows.
+The app supports multiple user roles with permission-based workflows and a clean Flutter architecture.
+
+---
+
+# Project Overview
+
+The Field Force Management App is designed for field teams and managers to efficiently track leads, assign tasks, monitor activities, and manage visit updates.
+
+The project focuses on:
+- Role-based access control
+- Clean Flutter UI
+- Feature-based architecture
+- Mock AI integration
+- Mobile-friendly workflow management
 
 ---
 
@@ -23,8 +36,8 @@ The app supports multiple user roles with permission-based workflows.
 
 ## Dashboard
 - Dynamic dashboard modules
-- Professional UI design
-- Responsive grid layout
+- Professional responsive UI
+- Grid-based layout
 
 ## Lead Management
 - Lead listing
@@ -40,14 +53,24 @@ The app supports multiple user roles with permission-based workflows.
 ## Task Management
 - Task viewing module
 - Role-based task visibility
+- Task status tracking
 
 ## Visit Tracking
 - Visit module
-- Activity management
+- Visit notes management
+- Activity tracking
+
+## Activity Timeline
+- Lead activity history
+- Status update logs
+- Escalation history
+- Notes timeline
 
 ## AI Suggestions
 - Mock AI recommendations
 - Status-based AI insights
+- Suggested next actions
+- Lead priority indication
 
 ---
 
@@ -73,7 +96,7 @@ The app supports multiple user roles with permission-based workflows.
 
 ---
 
-# Project Structure
+# Folder Structure
 
 ```bash
 lib/
@@ -87,30 +110,63 @@ lib/
 │   ├── activity/
 │   └── ai/
 │
+├── models/
+├── services/
+├── widgets/
+│
 ├── main.dart
 ```
 
 ---
 
-# Architecture
+# Architecture Explanation
 
-The application uses a feature-based folder structure.
+The application follows a **feature-based architecture** where every feature is separated into its own module.
 
-Each feature is separated into its own module:
-- Authentication
-- Dashboard
-- Leads
-- Tasks
-- Visits
-- Activity
-- AI Suggestions
+## Feature-Based Structure
+Each module contains its own:
+- Screens
+- Widgets
+- Models
+- Logic
 
-The application currently uses:
-- StatefulWidget
-- Navigator routing
-- Local mock data
+This improves:
+- Scalability
+- Code readability
+- Maintainability
 
-AI suggestions are mocked using conditional business logic instead of external APIs.
+## StatefulWidget Usage
+The application uses `StatefulWidget` for:
+- Dynamic UI updates
+- Form handling
+- Search & filters
+- Activity refresh
+
+## Mock AI Logic
+The AI module is implemented using mocked business logic instead of external AI APIs.
+
+The AI suggestions are generated using:
+- Lead status
+- Escalation conditions
+- Activity updates
+- Priority conditions
+
+This structure allows easy replacement with real AI services in future.
+
+## Navigation Flow
+The app uses Flutter Navigator routing.
+
+Navigation Flow:
+- Login → Dashboard
+- Dashboard → Leads/Tasks/Visits
+- Leads → Lead Details
+- Lead Details → Activity & AI Suggestions
+
+## Role-Based Rendering
+UI modules and actions are shown based on:
+- User role
+- Permission level
+- Assigned access
 
 ---
 
@@ -118,35 +174,31 @@ AI suggestions are mocked using conditional business logic instead of external A
 
 - Flutter
 - Dart
-- Material UI
+- Material Design UI
 
 ---
 
-# How to Run
+# How to Run the App
 
-## Step 1
-Clone repository
+## Step 1 — Clone Repository
 
 ```bash
 git clone <repository-link>
 ```
 
-## Step 2
-Open project
+## Step 2 — Open Project
 
 ```bash
 cd field_force_management_app
 ```
 
-## Step 3
-Install dependencies
+## Step 3 — Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-## Step 4
-Run application
+## Step 4 — Run Application
 
 ```bash
 flutter run
@@ -172,25 +224,67 @@ build/app/outputs/flutter-apk/app-release.apk
 
 # Screenshots
 
-Add screenshots here before submission:
-- Login Screen
-- Dashboard
-- Lead Management
-- Lead Details
+## Login Screen
+![Login](screenshots/login.png)
+
+## Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+## Lead List
+![Lead List](screenshots/lead_list.png)
+
+## Lead Details
+![Lead Details](screenshots/lead_details.png)
+
+## AI Summary
+![AI Summary](screenshots/ai_summary.png)
+
+## Timeline
+![Timeline](screenshots/timeline.png)
+
+---
+
+# Mock AI Explanation
+
+The project includes a mocked AI module designed to simulate AI-based recommendations without using external APIs.
+
+The AI logic currently provides:
+- Lead priority suggestions
+- Follow-up recommendations
+- Status-based insights
+- Escalation alerts
+
+The mocked AI is separated into its own module/service layer so it can later be replaced with real AI APIs.
+
+---
+
+# Final Testing Checklist
+
+Completed testing for:
+- Login flow
+- Role-based navigation
+- Lead management
+- Task management
+- Activity timeline
+- AI suggestions
+- Navigation flow
+- UI responsiveness
+- No crash flow
 
 ---
 
 # Future Improvements
 
 - Firebase Integration
-- Provider/Riverpod State Management
+- Riverpod/Bloc State Management
 - Real AI API Integration
 - Backend APIs
 - Offline Storage
 - Push Notifications
+- Notification System
 
 ---
 
 # Author
 
-Developed as Flutter Internship Assignment Project.
+Developed as a Flutter Internship Assignment Project.
